@@ -10,8 +10,8 @@ def main():
     image_folder = "./"  # Use relative paths for Streamlit Cloud
     logo_path = os.path.join(image_folder, "nychamberslogo.webp")
     img1_path = os.path.join(image_folder, "newyorkchambers1.jpg")
-    img2_path = os.path.join(image_folder, "newyorkchambers2.jpeg")
-    img3_path = os.path.join(image_folder, "newyorkchambers3.jpeg")
+    img2_path = os.path.join(image_folder, "newyorkchambers4.jpeg")
+    img3_path = os.path.join(image_folder, "newyorkchambers6.jpeg")
     
     # Load images if they exist
     if os.path.exists(logo_path):
