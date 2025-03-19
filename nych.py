@@ -7,20 +7,18 @@ def main():
     st.set_page_config(page_title="New York Chambers", page_icon="🏙️", layout="wide")
     
     # Define correct paths for images
-    # Define correct paths for images
-    image_folder = "myenv/"  # Adjust if needed
+    image_folder = "./"  # Use relative paths for Streamlit Cloud
     logo_path = os.path.join(image_folder, "nychamberslogo.webp")
-    img1_path = os.path.join(image_folder, "newyorkchambers1.jpeg")
-    img2_path = os.path.join(image_folder, "newyorkchambers4.jpeg")
-    img3_path = os.path.join(image_folder, "newyorkchambers6.jpeg")
-
+    img1_path = os.path.join(image_folder, "newyorkchambers1.jpg")
+    img2_path = os.path.join(image_folder, "newyorkchambers2.jpeg")
+    img3_path = os.path.join(image_folder, "newyorkchambers3.jpeg")
     
     # Load images if they exist
     if os.path.exists(logo_path):
         logo = Image.open(logo_path)
-        st.image(logo, width=300)
+        st.image(logo, width=200)
     else:
-        st.warning("Logo image not found.")
+        st.warning("Logo image not found. Please ensure the file is correctly uploaded.")
     
     # Title and Introduction
     st.title("New York Chambers")
@@ -40,7 +38,10 @@ def main():
         "We have a strong global presence with industry-leading professionals dedicated to delivering excellence in logistics, construction, fashion, and luxury event planning."
     )
     
-    st.image(img1_path, caption="New York Headquarters")
+    if os.path.exists(img1_path):
+        st.image(img1_path, caption="New York Headquarters")
+    else:
+        st.warning("New York Headquarters image not found. Please check the filename and upload location.")
     
     st.markdown("---")
     
@@ -77,7 +78,7 @@ def main():
     
     with tab4:
         st.subheader("Event Management & Party Services")
-        st.image("https://chambers.com/legal-rankings/media-entertainment-advisory-new-york-5:3150:12806:1?l=en-GB", caption="Exclusive Events & Luxury Venues")
+        st.image("https://source.unsplash.com/800x400/?party,event", caption="Exclusive Events & Luxury Venues")
         st.write(
             "New York Chambers is a premier provider of **luxury event planning, corporate functions, weddings, private parties, and venue rentals**. "
             "Our event services include:"
@@ -98,9 +99,9 @@ def main():
     st.write("Reach out to us for inquiries, partnerships, or career opportunities.")
     
     st.info(
-        """**Email:** newyorkchambers@workmail.com  
+        """**Email:** newyorkchambers@gmail.com  
         **Phone:** +1 (617) 470-1135  
-        **Address:** 403 East 68th Street, New York, NY 10001  
+        **Address:** 123 Innovation Avenue, New York, NY 10001  
         **Follow us on:** [LinkedIn](https://www.linkedin.com) | [Twitter](https://twitter.com) | [Instagram](https://instagram.com)"""
     )
     
@@ -115,11 +116,10 @@ def main():
         if submitted:
             st.success(f"Thank you, {name}! Your message has been received.")
     
-    # Additional Image
     if os.path.exists(img2_path):
         st.image(img2_path, caption="Our Team at Work", use_container_width=True)
     else:
-        st.warning("Image 2 not found.")
+        st.warning("Team image not found. Please ensure the file is correctly uploaded.")
     
     # Footer
     st.markdown("---")
