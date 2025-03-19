@@ -99,9 +99,9 @@ def main():
     st.write("Reach out to us for inquiries, partnerships, or career opportunities.")
     
     st.info(
-        """**Email:** newyorkchambers@gmail.com  
+        """**Email:** newyorkchambers@workmail.com  
         **Phone:** +1 (617) 470-1135  
-        **Address:** 123 Innovation Avenue, New York, NY 10001  
+        **Address:** 403 East 68th Street, New York, NY 10001  
         **Follow us on:** [LinkedIn](https://www.linkedin.com) | [Twitter](https://twitter.com) | [Instagram](https://instagram.com)"""
     )
     
